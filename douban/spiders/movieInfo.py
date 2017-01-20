@@ -7,3 +7,7 @@ class MovieInfo():
         self.star = star
         self.movieInfo = movieInfo
 
+class AiQingMovieInfo():
+    def __init__(self, title):
+        self.title = title
+

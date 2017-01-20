@@ -7,7 +7,7 @@ from ..IOText.writefile import FileIO
 from scrapy.contrib.spiders import CrawlSpider
 from scrapy.http import Request
 from scrapy.selector import Selector
-from douban.items import DoubanmovieItem
+from douban.items import DoubanmovieItem, DoubanAiqingItem
 from movieInfo import MovieInfo
 
 
@@ -53,7 +53,7 @@ class Douban(CrawlSpider):
         nextLink = selector.xpath('//span[@class="next"]/link/@href').extract()
         if nextLink:
             nextLink = nextLink[0]
-            print nextLink
+            # print nextLink
             yield Request(self.url + nextLink, callback=self.parse)
         else:
             moviesortedlist = sort_start(self.movieList)
@@ -71,9 +71,10 @@ class Douban(CrawlSpider):
                 writeline = str(self.index) + self.signtab + str(moveInfo.title) + self.signtab + str(moveInfo.quote) + \
                             self.signtab + str(moveInfo.critical) + self.signtab + str(moveInfo.star) + self.signtab + \
                             str(moveInfo.movieInfo) + self.signenter
-                print writeline
+                # print writeline
                 fo.write(writeline)
             fo.close()
+
 
 
 def sort_start(movielist):

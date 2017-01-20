@@ -30,3 +30,6 @@ class DoubanmovieItem(Item):
     star = Field()
     critical = Field()
     quote = Field()
+
+class DoubanAiqingItem(Item):
+    title = Field()
