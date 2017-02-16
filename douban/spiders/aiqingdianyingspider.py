@@ -14,11 +14,14 @@ class AQdianying(CrawlSpider):
         item = DoubanAiqingItem()
         selector = Selector(response)
         Movies = selector.xpath('//tr[@class="item"]')
+        print "---------------"
+        print  Movies
         for eachMovie in Movies:
             # title = eachMovie.extract()
             title = eachMovie.xpath('td/div[@class="pl2"]/a/text()').extract()[0]
+            print  title
+
             # title = eachMovie.xpath('td/div[@class="pl2"]').extract()
-            print "-----------------------------------", title
             item['title'] = title.encode("utf-8")
             aiqingmovieInfo = AiQingMovieInfo(item['title'])
             self.movielist.append(aiqingmovieInfo)

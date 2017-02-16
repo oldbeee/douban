@@ -53,7 +53,7 @@ class Douban(CrawlSpider):
         nextLink = selector.xpath('//span[@class="next"]/link/@href').extract()
         if nextLink:
             nextLink = nextLink[0]
-            # print nextLink
+            print nextLink[0] + "-----------------------------------------------------------------------"
             yield Request(self.url + nextLink, callback=self.parse)
         else:
             moviesortedlist = sort_start(self.movieList)

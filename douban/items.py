@@ -33,3 +33,8 @@ class DoubanmovieItem(Item):
 
 class DoubanAiqingItem(Item):
     title = Field()
+
+class DoubanZufangItem(Item):
+    #price = Field()
+    title = Field()
+    url = Field()

@@ -11,3 +11,9 @@ class AiQingMovieInfo():
     def __init__(self, title):
         self.title = title
 
+
+class Doubanzufang():
+    def __init__(self, title, url):
+        #self.price = price
+        self.title = title
+        self.url = url
