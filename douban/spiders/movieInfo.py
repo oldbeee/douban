@@ -17,3 +17,15 @@ class Doubanzufang():
         #self.price = price
         self.title = title
         self.url = url
+
+class ShoujiInfo():
+    def __init__(self, title, download_time, intro, tag):
+        self.title = title
+        self.download_time = download_time
+        self.intro = intro
+        self.tag = tag
+
+class IntroInfo():
+    def __init__(self, intro, tag):
+        self.intro = intro
+        self.tag = tag

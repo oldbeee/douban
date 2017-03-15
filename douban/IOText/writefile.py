@@ -1,16 +1,24 @@
+import os
+
 class FileIO():
 
     def __init__(self):
         self.signtab = "\t"
         self.signenter = "\n"
 
-
     def openfile(self, file_url):
         fo = open(file_url, "wb")
         return fo
 
-    def writeline(self, fo, movieinfo):
-        fo.write(movieinfo)
+    def writeline(self, movieinfo, file_url):
+        if os.path.exists(file_url):
+            fo = open(file_url, "a")
+            fo.write(movieinfo)
+        else:
+            fo = open(file_url, "w")
+            fo.write("TODAY INFO LIST \n")
+            fo.write(movieinfo)
+        fo.close()
 
     def closefile(selfs, fo):
         fo.close()

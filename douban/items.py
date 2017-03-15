@@ -38,3 +38,13 @@ class DoubanZufangItem(Item):
     #price = Field()
     title = Field()
     url = Field()
+
+class ShoujiinfoItem(Item):
+    title = Field()
+    download_times = Field()
+    intro = Field()
+    tag = Field()
+
+class IntroItem(Item):
+    intro = Field()
+    tag = Field()
